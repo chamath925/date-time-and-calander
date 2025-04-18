@@ -4,12 +4,12 @@ import time
 def getRandomDate (startDate,endDate):
     print("printing random number between ",startDate,"and",endDate)
     randomGenrotor = random.random()
-    dateFormat = '%m/%d/%y'
+    dateFormat = '%m/%d/%Y'
 
     startTime = time.mktime(time.strptime(startDate,dateFormat))
     endTime = time.mktime(time.strptime(endDate,dateFormat))
 
-    randomtime = startTime + randomGenrotor *(startTime + endTime)
+    randomtime = startTime + randomGenrotor *(endTime - startTime)
     randomDate = time.strftime(dateFormat,time.localtime(randomtime))
     return randomDate
 
